@@ -24,9 +24,12 @@ namespace BlackJack
 
         private void btn_Iniciar_Click(object sender, EventArgs e)
         {
+           
             Form jogo = new Form_jogo();
             jogo.Show();
             this.Visible = false;
+    
+            
         }
     }
 }

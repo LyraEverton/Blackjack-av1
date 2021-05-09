@@ -42,12 +42,20 @@ namespace BlackJack
             this.lbl_Pontos_B = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_Resultado = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btn_jogar_3 = new System.Windows.Forms.Button();
+            this.btn_parar_3 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_pontos_C = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_jogar_1
             // 
+            this.btn_jogar_1.Enabled = false;
             this.btn_jogar_1.Location = new System.Drawing.Point(26, 452);
             this.btn_jogar_1.Name = "btn_jogar_1";
             this.btn_jogar_1.Size = new System.Drawing.Size(110, 29);
@@ -58,7 +66,8 @@ namespace BlackJack
             // 
             // btn_reiniciar
             // 
-            this.btn_reiniciar.Location = new System.Drawing.Point(333, 12);
+            this.btn_reiniciar.Enabled = false;
+            this.btn_reiniciar.Location = new System.Drawing.Point(696, 27);
             this.btn_reiniciar.Name = "btn_reiniciar";
             this.btn_reiniciar.Size = new System.Drawing.Size(120, 28);
             this.btn_reiniciar.TabIndex = 1;
@@ -80,7 +89,7 @@ namespace BlackJack
             // 
             this.lbl_Pontos_A.AutoSize = true;
             this.lbl_Pontos_A.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Pontos_A.Location = new System.Drawing.Point(351, 182);
+            this.lbl_Pontos_A.Location = new System.Drawing.Point(356, 48);
             this.lbl_Pontos_A.Name = "lbl_Pontos_A";
             this.lbl_Pontos_A.Size = new System.Drawing.Size(25, 25);
             this.lbl_Pontos_A.TabIndex = 3;
@@ -90,7 +99,7 @@ namespace BlackJack
             // 
             this.lbl_legenda.AutoSize = true;
             this.lbl_legenda.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_legenda.Location = new System.Drawing.Point(363, 154);
+            this.lbl_legenda.Location = new System.Drawing.Point(394, 27);
             this.lbl_legenda.Name = "lbl_legenda";
             this.lbl_legenda.Size = new System.Drawing.Size(60, 21);
             this.lbl_legenda.TabIndex = 4;
@@ -98,6 +107,7 @@ namespace BlackJack
             // 
             // btn_parar_1
             // 
+            this.btn_parar_1.Enabled = false;
             this.btn_parar_1.Location = new System.Drawing.Point(162, 452);
             this.btn_parar_1.Name = "btn_parar_1";
             this.btn_parar_1.Size = new System.Drawing.Size(110, 29);
@@ -108,7 +118,8 @@ namespace BlackJack
             // 
             // btn_parar_2
             // 
-            this.btn_parar_2.Location = new System.Drawing.Point(656, 452);
+            this.btn_parar_2.Enabled = false;
+            this.btn_parar_2.Location = new System.Drawing.Point(436, 452);
             this.btn_parar_2.Name = "btn_parar_2";
             this.btn_parar_2.Size = new System.Drawing.Size(110, 29);
             this.btn_parar_2.TabIndex = 8;
@@ -119,7 +130,7 @@ namespace BlackJack
             // pictureBox2
             // 
             this.pictureBox2.Image = global::BlackJack.Properties.Resources._0;
-            this.pictureBox2.Location = new System.Drawing.Point(520, 83);
+            this.pictureBox2.Location = new System.Drawing.Point(300, 83);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(246, 353);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -128,7 +139,8 @@ namespace BlackJack
             // 
             // btn_jogar_2
             // 
-            this.btn_jogar_2.Location = new System.Drawing.Point(520, 452);
+            this.btn_jogar_2.Enabled = false;
+            this.btn_jogar_2.Location = new System.Drawing.Point(300, 452);
             this.btn_jogar_2.Name = "btn_jogar_2";
             this.btn_jogar_2.Size = new System.Drawing.Size(110, 29);
             this.btn_jogar_2.TabIndex = 6;
@@ -140,7 +152,7 @@ namespace BlackJack
             // 
             this.lbl_Pontos_B.AutoSize = true;
             this.lbl_Pontos_B.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Pontos_B.Location = new System.Drawing.Point(407, 182);
+            this.lbl_Pontos_B.Location = new System.Drawing.Point(412, 48);
             this.lbl_Pontos_B.Name = "lbl_Pontos_B";
             this.lbl_Pontos_B.Size = new System.Drawing.Size(25, 25);
             this.lbl_Pontos_B.TabIndex = 9;
@@ -149,7 +161,7 @@ namespace BlackJack
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(388, 186);
+            this.label1.Location = new System.Drawing.Point(393, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(13, 15);
             this.label1.TabIndex = 10;
@@ -159,16 +171,83 @@ namespace BlackJack
             // 
             this.lbl_Resultado.AutoSize = true;
             this.lbl_Resultado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Resultado.Location = new System.Drawing.Point(278, 251);
+            this.lbl_Resultado.Location = new System.Drawing.Point(356, 228);
             this.lbl_Resultado.Name = "lbl_Resultado";
             this.lbl_Resultado.Size = new System.Drawing.Size(0, 21);
             this.lbl_Resultado.TabIndex = 11;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::BlackJack.Properties.Resources._0;
+            this.pictureBox3.Location = new System.Drawing.Point(570, 83);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(246, 353);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 12;
+            this.pictureBox3.TabStop = false;
+            // 
+            // btn_jogar_3
+            // 
+            this.btn_jogar_3.Enabled = false;
+            this.btn_jogar_3.Location = new System.Drawing.Point(570, 452);
+            this.btn_jogar_3.Name = "btn_jogar_3";
+            this.btn_jogar_3.Size = new System.Drawing.Size(110, 29);
+            this.btn_jogar_3.TabIndex = 13;
+            this.btn_jogar_3.Text = "Jogar";
+            this.btn_jogar_3.UseVisualStyleBackColor = true;
+            this.btn_jogar_3.Click += new System.EventHandler(this.btn_jogar_3_Click);
+            // 
+            // btn_parar_3
+            // 
+            this.btn_parar_3.Enabled = false;
+            this.btn_parar_3.Location = new System.Drawing.Point(706, 452);
+            this.btn_parar_3.Name = "btn_parar_3";
+            this.btn_parar_3.Size = new System.Drawing.Size(110, 29);
+            this.btn_parar_3.TabIndex = 14;
+            this.btn_parar_3.Text = "Parar";
+            this.btn_parar_3.UseVisualStyleBackColor = true;
+            this.btn_parar_3.Click += new System.EventHandler(this.btn_parar_3_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(443, 52);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(13, 15);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "x";
+            // 
+            // lbl_pontos_C
+            // 
+            this.lbl_pontos_C.AutoSize = true;
+            this.lbl_pontos_C.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_pontos_C.Location = new System.Drawing.Point(461, 48);
+            this.lbl_pontos_C.Name = "lbl_pontos_C";
+            this.lbl_pontos_C.Size = new System.Drawing.Size(24, 25);
+            this.lbl_pontos_C.TabIndex = 16;
+            this.lbl_pontos_C.Text = "0";
+            this.lbl_pontos_C.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(197, 99);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 21);
+            this.label3.TabIndex = 11;
             // 
             // Form_jogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 502);
+            this.ClientSize = new System.Drawing.Size(838, 502);
+            this.Controls.Add(this.lbl_pontos_C);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btn_parar_3);
+            this.Controls.Add(this.btn_jogar_3);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.lbl_Resultado);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_Pontos_B);
@@ -189,6 +268,7 @@ namespace BlackJack
             this.Text = "Black Jack (Versão1.0)";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,6 +288,12 @@ namespace BlackJack
         private System.Windows.Forms.Label lbl_Pontos_B;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_Resultado;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button btn_jogar_3;
+        private System.Windows.Forms.Button btn_parar_3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_pontos_C;
+        private System.Windows.Forms.Label label3;
     }
 }
 

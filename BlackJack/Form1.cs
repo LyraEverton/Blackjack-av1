@@ -15,13 +15,13 @@ namespace BlackJack
         public Form_jogo()
         {
             InitializeComponent();
-            btn_reiniciar.Enabled = false;
-            btn_jogar_2.Enabled = false;
-            btn_parar_2.Enabled = false;
+            btn_jogar_1.Enabled = true;
+            btn_parar_1.Enabled = true;
         }
 
         int pontos_A = 0;
         int pontos_B = 0;
+        int pontos_C = 0;
 
         public void resultado()
         {
@@ -38,13 +38,16 @@ namespace BlackJack
              */
 
 
-            if (pontos_A > pontos_B && pontos_A <= 21)
+            if (pontos_A > pontos_B && pontos_A > pontos_C && pontos_A <= 21)
                 lbl_Resultado.Text = "Jogador 1 GANHOU!";
             else
-                if (pontos_A < pontos_B && pontos_B <= 21)
+                if (pontos_B > pontos_A && pontos_B > pontos_C && pontos_B <= 21)
                 lbl_Resultado.Text = "Jogador 2 GANHOU!";
             else
-                    if (pontos_A <= 21 && pontos_B <= 21)
+                if (pontos_C > pontos_A && pontos_C > pontos_B && pontos_C <= 21)
+                lbl_Resultado.Text = "Jogador 3 GANHOU!";
+            else
+                if (pontos_A <= 21 && pontos_B <= 21 && pontos_C <= 21)
                 lbl_Resultado.Text = "EMPATE";
             else
                 lbl_Resultado.Text = "SEM VENCEDOR.";
@@ -77,8 +80,10 @@ namespace BlackJack
 
             if (jogador == 1)
                 pontos_A += total_pontos;
-            else
+            else if (jogador == 2)
                 pontos_B += total_pontos;
+            else
+                pontos_C += total_pontos;
         }
 
             private void button1_Click(object sender, EventArgs e)
@@ -118,16 +123,22 @@ namespace BlackJack
             pontos_B = 0;
             btn_jogar_1.Enabled = true;
             btn_jogar_2.Enabled = false;
+            btn_jogar_3.Enabled = false;
             btn_parar_1.Enabled = true;
             btn_parar_2.Enabled = false;
+            btn_parar_3.Enabled = false;
+
 
             btn_reiniciar.Enabled = false;
             lbl_Pontos_A.Text = "0";
             lbl_Pontos_B.Text = "0";
+            lbl_pontos_C.Text = "0";
             lbl_Resultado.Text = "";
 
             pictureBox1.Image = Properties.Resources._0;
             pictureBox2.Image = Properties.Resources._0;
+            pictureBox3.Image = Properties.Resources._0;
+
 
         }
 
@@ -144,7 +155,7 @@ namespace BlackJack
                     //lbl_Resultado.Text = "GANHOU!!!";
                     btn_jogar_2.Enabled = false;
                     btn_reiniciar.Enabled = true;
-                    resultado();
+                    
                 }
             }
             else
@@ -154,13 +165,43 @@ namespace BlackJack
 
                 btn_jogar_2.Enabled = false;
                 btn_parar_2.Enabled = false;
+                
+                btn_jogar_3.Enabled = true;
+                btn_parar_3.Enabled = true;
+            }
+        }
+        private void btn_jogar_3_Click(object sender, EventArgs e)
+        {
+            Jogada(pictureBox3, 3);
+
+            if (pontos_C <= 21)
+            {
+                lbl_pontos_C.Text = Convert.ToString(pontos_C);
+                if (pontos_C == 21)
+                {
+                    btn_jogar_3.Enabled = false;
+                    btn_reiniciar.Enabled = true;
+                    resultado();
+                }
+            }
+            else
+            {
+                lbl_pontos_C.Text = Convert.ToString(pontos_C);
+
+                btn_jogar_1.Enabled = false;
+                btn_parar_1.Enabled = false;
 
                 btn_jogar_2.Enabled = false;
                 btn_parar_2.Enabled = false;
 
+                btn_jogar_3.Enabled = true;
+                btn_parar_3.Enabled = true;
+
                 resultado();
                 btn_reiniciar.Enabled = true;
+
             }
+
         }
 
         private void btn_parar_1_Click(object sender, EventArgs e)
@@ -175,74 +216,23 @@ namespace BlackJack
         {
             btn_jogar_2.Enabled = false;
             btn_parar_2.Enabled = false;
+            btn_jogar_3.Enabled = true;
+            btn_parar_3.Enabled = true;
+            
+        }
+        private void btn_parar_3_Click(object sender, EventArgs e)
+        {
+            btn_jogar_3.Enabled = false;
+            btn_parar_3.Enabled = false;
             btn_reiniciar.Enabled = true;
             resultado();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 
-
-
-    /*
-           int x;
-           Random sorteio = new Random();
-           x = sorteio.Next(1, 14);
-
-           switch (x)
-           {
-               case 1: 
-                   pictureBox1.Image = Properties.Resources.a;
-                   pontos_A += 1;
-                   break;
-               case 2:
-                   pictureBox1.Image = Properties.Resources._2;
-                   pontos_A += 2;
-                   break;
-               case 3:
-                   pictureBox1.Image = Properties.Resources._3;
-                   pontos_A += 3;
-                   break;
-               case 4:
-                   pictureBox1.Image = Properties.Resources._4;
-                   pontos_A += 4;
-                   break;
-               case 5:
-                   pictureBox1.Image = Properties.Resources._5;
-                   pontos_A += 5;
-                   break;
-               case 6:
-                   pictureBox1.Image = Properties.Resources._6;
-                   pontos_A += 6;
-                   break;
-               case 7:
-                   pictureBox1.Image = Properties.Resources._7;
-                   pontos_A += 7;
-                   break;
-               case 8:
-                   pictureBox1.Image = Properties.Resources._8;
-                   pontos_A += 8;
-                   break;
-               case 9:
-                   pictureBox1.Image = Properties.Resources._9;
-                   pontos_A += 9;
-                   break;
-               case 10:
-                   pictureBox1.Image = Properties.Resources._10;
-                   pontos_A += 10;
-                   break;
-               case 11:
-                   pictureBox1.Image = Properties.Resources.J;
-                   pontos_A += 11;
-                   break;
-               case 12:
-                   pictureBox1.Image = Properties.Resources.Q;
-                   pontos_A += 12;
-                   break;
-               case 13:
-                   pictureBox1.Image = Properties.Resources.K;
-                   pontos_A += 13;
-                   break;
-
-           }
-
-           */
 }
